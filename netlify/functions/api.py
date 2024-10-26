@@ -1,13 +1,18 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 from app import create_app
 from flask_serverless import FlaskServerless
+import os
 
 app = create_app()
 
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/styles.css')
+def styles():
+    return send_from_directory('.', 'styles.css', mimetype='text/css')
 
 @app.route('/mods')
 def mods():
