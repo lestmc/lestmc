@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LestMC - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="{{ url_for('main.index') }}" class="brand-logo">LestMC</a>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('main.index') }}">首页</a></li>
+                <li><a href="{{ url_for('main.resources') }}">资源</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 LestMC. All rights reserved.</p>
+    </footer>
+</body>
+</html>

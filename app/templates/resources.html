@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}资源列表{% endblock %}
+
+{% block content %}
+<div class="resources-container">
+    <h1>我的世界资源</h1>
+    
+    <div class="resources-grid">
+        {% for resource in resources %}
+        <div class="resource-card">
+            <h3>{{ resource.title }}</h3>
+            <p>{{ resource.description }}</p>
+            <div class="resource-meta">
+                <span>版本: {{ resource.version }}</span>
+                <a href="{{ resource.download_url }}" class="download-btn">下载</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
