@@ -78,3 +78,10 @@ footer {
     background-color: #333;
     color: white;
 }
+
+/* 新的容器样式 */
+.mods-container,
+.modpacks-container,
+.resourcepacks-container {
+    padding: 2rem;
+}

@@ -5,14 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LestMC - {% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        #loading-screen h1 {
+            color: white;
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        #loading-screen p {
+            color: white;
+            font-size: 1.5em;
+        }
+    </style>
 </head>
 <body>
+    <div id="loading-screen">
+        <h1>LestMC</h1>
+        <p>欢迎━(*｀∀´*)ノ亻!</p>
+    </div>
+
     <nav>
         <div class="nav-wrapper">
             <a href="{{ url_for('main.index') }}" class="brand-logo">LestMC</a>
             <ul class="nav-links">
-                <li><a href="{{ url_for('main.index') }}">首页</a></li>
-                <li><a href="{{ url_for('main.resources') }}">资源</a></li>
+                <li><a href="{{ url_for('main.mods') }}">MOD</a></li>
+                <li><a href="{{ url_for('main.modpacks') }}">整合包</a></li>
+                <li><a href="{{ url_for('main.resourcepacks') }}">材质包</a></li>
             </ul>
         </div>
     </nav>
@@ -24,5 +54,13 @@
     <footer>
         <p>&copy; 2024 LestMC. All rights reserved.</p>
     </footer>
+
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loading-screen').style.display = 'none';
+            }, 2000); // 2秒后隐藏加载界面
+        });
+    </script>
 </body>
 </html>
