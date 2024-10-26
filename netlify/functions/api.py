@@ -5,6 +5,10 @@ from flask_serverless import FlaskServerless
 
 app = create_app()
 
+@app.route('/')
+def index():
+    return "Welcome to LestMC!"
+
 @app.route('/test')
 def test():
     return "Hello from Netlify!"
