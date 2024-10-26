@@ -4,4 +4,9 @@ from app import create_app
 from flask_serverless import FlaskServerless
 
 app = create_app()
+
+@app.route('/test')
+def test():
+    return "Hello from Netlify!"
+
 handler = FlaskServerless(app).handler
