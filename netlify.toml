@@ -1,12 +1,12 @@
 [build]
   command = "pip install -r requirements.txt"
   functions = "netlify/functions"
-  publish = "."  # 发布根目录
+  publish = "."
 
 [build.environment]
   PYTHON_VERSION = "3.9"
 
 [[redirects]]
   from = "/*"
-  to = "/.netlify/functions/api/:splat"
+  to = "/.netlify/functions/api"
   status = 200
